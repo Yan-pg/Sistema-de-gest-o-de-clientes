@@ -1,0 +1,92 @@
+<section id="filter">
+    <div class="project">
+        <h1>Cliente {{cliente.nome}}</h1>
+        <div class="edit">
+            <a href="/clientes"><button>Voltar</button></a>
+        </div>
+    </div>
+</section>
+<main>
+    <div id="more-container">
+        <div class="infos-more1">
+            <input type="hidden" name="id" value="{{projeto._id}}">
+            <div>
+                    <h2>Sobrenome</h2>
+                    <p>{{cliente.sobrenome}}</p><br><br><br>
+
+                <h3>Telefone </h3>
+                <p>{{cliente.telefone}}</p>
+            </div>
+            <div>
+                <h3>Cidade</h3>
+                <p>{{cliente.cidade}}</p>
+            </div>
+            <div>
+                <h3>Endereço</h3>
+                <p>{{cliente.endereco}}</p> <br><br><br>
+                <h3>CPF</h3>
+                <p>{{cliente.cpf}}</p>
+
+            </div>
+        </div>
+        <div class="more-detalhes">
+        <div class="detalhes">
+            <div class="data-more">
+                <p>{{cliente.date}}</p>
+            </div>
+        </div>
+        <div class="cliente">
+            <h3 class="color-h3">Projetos relacionados a esse cliente:</h3>
+            {{#each projeto}}
+                <div id="more-clientes">
+                    <div class="cliente1">
+                        <h3>nome do projeto</h3>
+                        <p>{{nome}}</p>
+                
+                        <h3>Valor</h3>
+                        <p>{{valor}}</p>
+                    </div>
+                    <div class="cliente2">
+                        <h3>Pago</h3>
+                        <p>{{pago}}</p>
+                    </div>
+                    <div class="cliente3">
+                        <div>
+                            <h3>Descrição</h3>
+                            <p>{{descricao}}</p>
+
+                        </div>
+
+                        <h3 class="date">Data</h3>
+                        <p>{{data}}</p>
+                    </div>
+                </div>
+            {{else}}
+            {{/each}}
+        </div>
+    </div>
+        <div id="box">
+            <h2>Tem certeza que deseja deletar esse projeto ?</h2>
+        <div>
+            <div class="container-delete">
+               <div class="inicial">
+                        <a href="">Voltar</a>
+                    </div>
+                    <form action="/projetos/more/delete" method="POST">
+                            <input type="hidden" name="id" value="{{_id}}">
+                        <button type="submit">Deletar</button>
+                    </form>  
+                    </div>  
+            </div>
+    </div>
+</main>
+<script>
+  function more(){
+        var hideAndShow = document.getElementById("more-clientes")
+        if (hideAndShow.style.display === "none") {
+            hideAndShow.style.display = "flex"
+        } else {
+            hideAndShow.style.display = "none"
+        }   
+  }
+</script>

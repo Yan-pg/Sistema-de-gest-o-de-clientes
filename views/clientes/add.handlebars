@@ -1,0 +1,25 @@
+<section id="form">
+    <h3>Crie um cliente :)</h3>
+    {{#each erros}}
+        <div class="erros">
+            <p><strong>{{texto}}</strong></p>
+        </div>
+    {{else}}
+    {{/each}}   
+    <div class="form-container">
+        <div class="card-form">
+            <form action="/clientes/new" method="POST">
+                    <input type="text" name="nome" placeholder="Digite o primerio nome do cliente." ><br>
+                    <input type="text" name="sobrenome" placeholder="Digite o sobrenome nome do cliente." ><br>
+                    <input type="number" name="telefone" placeholder="Digite o numero de telefone."><br>
+                    <input type="text" name="cidade" placeholder="Digite a cidade. (opcional)"><br>
+                    <input type="text" name="endereco" placeholder="Digite o endereço. (opcional)"><br>
+                    <input type="text" name="cpf" placeholder="Digite o cpf. (opcional)"><br>
+                    <div class="back-project">
+                            <a href="/clientes">Voltar</a>    
+                            <button class="button-margin" type="submit">Criar projeto</button>  
+                    </div>
+            </form>
+        </div>
+    </div>
+</section>

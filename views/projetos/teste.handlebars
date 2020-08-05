@@ -1,0 +1,20 @@
+<input type="number" name="n1" id="n1">
+<input type="number" name="n2" id="n2">
+<input type="button" onclick="clicar()" value="calcular">
+<div class="valor">
+
+</div>
+
+<input type="number" name="valor" id="valor" readonly/>    
+
+<script>
+    function clicar(){
+        var n1 = document.getElementById("n1")
+        var n2 = document.getElementById("n2")
+        var res = Number(n1.value) + Number(n2.value)
+        console.log(res) 
+
+        document.getElementById("valor").value = res
+
+    }
+</script>

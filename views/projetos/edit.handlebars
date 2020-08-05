@@ -1,0 +1,122 @@
+
+<section id="form">
+    <h3>Edite o projeto :)</h3>
+        {{#each erros}}
+        <div class="erros">
+            <p><strong>{{texto}}</strong></p>
+        </div>
+    {{else}}
+    {{/each}}
+    <div class="form-container">
+        <div class="card-form">
+            <form action="/projetos/editado" method="POST">
+                      <input type="hidden" name="id" value="{{projeto._id}}">
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome do projetos." value="{{projeto.nome}}"><br>
+                    <textarea name="descricao" id="descricao" cols="30" rows="10" placeholder="Digite observaçoes a fazer.">{{projeto.descricao}}</textarea><br>
+                     <div class="servece-container">
+                        <div class="servece">
+                            <label for=""><strong>Logomarca</strong></label><br>
+                            <div class="onOff" onclick="serveceOne()">
+                                <p>Adicionar um  valor</p>
+                            </div>
+                            <input type="number" name="logoMarca" id="serveceOne" value="{{projeto.logoMarca}}"><br>
+
+                            <label for=""><strong>Mídias sociais:</strong></label><br>
+                            <div class="onOff" onclick="serveceTwo()">
+                                <p>Adicionar um  valor</p>
+                            </div>
+                            <input type="number" name="midiasSociais" id="serveceTwo" value="{{projeto.midiasSociais}}"><br>
+                        </div>
+                        <div class="servece">
+                            <label for=""><strong>Cartão de visita:</strong></label><br>
+                            <div class="onOff" onclick="serveceThree()">
+                                <p>Adicionar um  valor</p>
+                            </div>
+                            <input type="number" name="cartaoDeVisita" id="serveceThree" value="{{projeto.cartaoDeVisita}}"><br>
+
+                            <label for=""><strong>Planfetos:</strong></label><br>
+                            <div class="onOff" onclick="serveceFour()">
+                                <p>Adicionar um  valor</p>
+                            </div>
+                            <input type="number" name="panfletos" id="serveceFour"  value="{{projeto.panfletos}}"><br>
+                        </div>
+                        <div class="calcular" onclick="calcular()">
+                            <p>calcular</p>
+                        </div>
+                        <div class="valorTotal">
+                            <label for=""><strong>Valor total:</strong></label>
+                            <input type="number" name="valorTotal" id="valorTotal"   value="{{projeto.valorTotal}}" readonly/>
+                        </div>
+                    </div>
+                    <div class="radio">
+                        <label for="status"><strong>Status:</strong></label><br>
+                        <div class="radio1">
+                            <input type="radio" id="status" name="status" value="Em andamento">
+                            <label for="">Em andamento</label>
+                            <input type="radio" id="status" name="status" value="Entregue">
+                            <label for="">Entregue</label>
+                        </div>
+                            <input type="radio" id="status" name="status" value="Cancelado">
+                            <label for="">Cancelado</label><br>
+                    </div>
+                    <div class="radio">
+                        <label for="pago"><strong>Pago: </strong> </label><br>
+                            <input type="radio" id="pago" name="pago" value="Sim">
+                            <label for="pago">Sim</label>
+                            <input type="radio" id="pago" name="pago" value="Não">
+                            <label for="pago">Não</label><br>
+                    </div>
+                    <div class="back-project">
+                            <a href="/projetos">Voltar</a>    
+                            <button class="button-margin" type="submit">Editar projeto</button>  
+                        </div>
+            </form>
+        </div>
+    </div>
+</section>
+<script>
+      function serveceOne(){
+        var onOff = document.getElementById("serveceOne")
+        if (onOff.style.display === "none"){
+            onOff.style.display = "block"
+        }else{
+            onOff.style.display = "none"
+        }
+    }
+    function serveceTwo(){
+        var onOff = document.getElementById("serveceTwo")
+        if (onOff.style.display === "none"){
+            onOff.style.display = "block"
+        }else{
+            onOff.style.display = "none"
+        }
+    }
+    function serveceThree(){
+        var onOff = document.getElementById("serveceThree")
+        if (onOff.style.display === "none"){
+            onOff.style.display = "block"
+        }else{
+            onOff.style.display = "none"
+        }
+    }
+    function serveceFour(){
+        var onOff = document.getElementById("serveceFour")
+        if (onOff.style.display === "none"){
+            onOff.style.display = "block"
+        }else{
+            onOff.style.display = "none"
+        }
+    }
+    function calcular(){
+        var logoMarca = document.getElementById('serveceOne')
+        var midiasSociais = document.getElementById("serveceTwo")
+        var cartaoDeVisita = document.getElementById("serveceThree")
+        var panfletos = document.getElementById("serveceFour")
+
+        var Total = Number(logoMarca.value) + Number(midiasSociais.value) + Number(cartaoDeVisita.value) + Number(panfletos.value)
+
+        document.getElementById("valorTotal").value = Total
+        console.log(Total)
+        console.log(valorTotal)
+    }
+</script>

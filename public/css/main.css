@@ -1,0 +1,803 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #121116;
+    font-family: 'Inter', sans-serif;
+}
+.menu-moblie {
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+}
+.menu1 {
+    display: none;
+}
+.menu1 p {
+    cursor: pointer;
+    color: white;
+}
+#menu-nav {
+    display: none;
+}
+.menu-moblie img {
+    display: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.menu-moblie nav {
+    background-color: white;
+    margin: 0;
+}
+.menu-moblie nav li {
+    margin-left: 5%;
+    list-style: none;
+    padding-top: 5%;
+    display: none; 
+    border-bottom: 1px solid rgb(138, 136, 136);
+}
+.menu-moblie nav li:hover {
+    background: rgb(187, 187, 187);
+    
+}
+.menu-moblie nav a {
+    text-decoration: none;
+    color: rgb(46, 45, 45);
+    text-transform: uppercase;
+}
+.menu-moblie nav li a:hover {
+    opacity: 0.6;
+}
+.filter-button button {
+    width: 150px;
+    height: 40px;
+    background-color: #6321ce;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.filter-button button:hover {
+    opacity: 0.8;
+}
+.container-nav {
+    max-width: 1110px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+.container-nav a {
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.fixed {
+    margin-top: 4.5%;
+}
+.fixed a{
+    color: #a0a0a1;
+    
+}
+.fixed-01 {
+    margin-top: 4.5%;
+    border-bottom: none;
+}
+.fixed-01 a {
+    color: #4d4d4d;
+}
+.fixed-01 :hover {
+    color: #a0a0a1;
+}
+#filter {
+    max-width: 1110px;
+    margin: 0 auto;
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
+}
+.project {
+    margin-top: 2.5%;
+    color: #4d435d;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.status {
+    display: flex;
+    padding-left: 8px;
+    padding: 10px;
+}
+.status-now button{
+    color: #ffffff;
+    background: #45454b;
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+.status div{
+    padding: 0 10px;
+}
+.status-others button{
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    background: #1c1c22;
+}
+.status button:hover{
+    opacity: 0.5;
+}
+.status a button{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+}
+.button-filter button {
+    background: #6321ce;
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+.button-filter1 button {
+    background: #6321ce;
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+}
+.button-filter1 button:hover{
+    opacity: 0.5;
+}
+
+#main-container {
+    max-width: 1110px;
+    margin: 0 auto; 
+    background-color: #1c1c22;
+    height: auto;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+#main-container button:hover {
+    opacity: 0.5;
+}
+.infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #c2c2c2;
+    line-height: 35px;
+    margin-right: 5%;
+}   
+.infos-div {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+.buttons-infos {
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+}
+.main-display {
+    display: flex;
+    justify-content: space-between;
+}
+.infos h2{
+    font-size: 19px;
+    margin-left: 2%;
+    width: 25%;
+}
+.infos h3 {
+    font-size: 13px;
+}
+.infos p {
+    font-size: 13px;
+}
+.more a button{
+    text-transform: uppercase;
+}
+.more button{
+    width: 70px;
+    height: 20px;
+    background-color: #6321ce;
+    border: none;
+    border-radius: 7px;
+    color: #FFFFFF;
+    font-weight: 700;
+    cursor: pointer;
+}
+.edit a button{
+    text-transform: uppercase;
+}
+.edit button {
+    width: 70px;
+    height: 20px;
+    background-color: #4d435d;
+    border: none;
+    border-radius: 7px;
+    color: #FFFFFF;
+    font-weight: 700;
+    cursor: pointer;
+}
+.delete {
+    margin-right: 5%;
+}
+.delete a button{
+    text-transform: uppercase;
+}
+.delete button {
+    width: 70px;
+    height: 20px;
+    background-color: #752f2f;
+    border: none;
+    border-radius: 7px;
+    color: #FFFFFF;
+    font-weight: 700;
+    cursor: pointer;
+}
+#box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    background: #2a2a2e;
+    padding: 40px;
+    display: none;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgba(12, 12, 12, 0.335);
+}
+#box h2 {
+    margin: 0 auto;
+    padding: 0;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+#box button {
+    border: none;
+    cursor: pointer;
+    background: #752f2f;
+    color: #fff;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 30px;
+    margin-left: 50px;
+    border-radius: 10px;
+}
+#box a {
+    text-decoration: none;
+    color: #ffffff;
+    
+}
+.container-delete{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+.detalhes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+.detalhes p {
+    width: 60%;
+}
+.detalhes1 {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+.detalhes2 {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+.date {
+    font-size: 12px;
+}
+.date1 {
+    font-size: 12px;
+    margin-top: 30%;
+    margin-right: 70%;
+}
+.cliente2 {
+    margin-left: 30%;
+}
+.cliente3 {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15%;
+}
+#form {
+    max-width: 1110px;
+    margin: 0 auto;
+}
+#form h3 {
+    margin-top: 5%;
+    color: #FFFFFF;
+}
+.card-form {
+    margin-left: 10%;
+}
+.card-form a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.card-form button {
+    background: #6321ce;
+    color: #FFFFFF;
+    font-weight: 700;
+    width: 30%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    margin-left: 54%;
+}
+.card-form button:hover {
+    background: #695190;
+    cursor: pointer;
+}
+.servece-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+.servece button{
+    width: 40%;
+    height: 20px;
+}
+.onOff {
+    color: #695190;
+    font-size: 13px;
+}
+.onOff p {
+    cursor: pointer;
+}
+.calcular p{
+    color: #695190;
+    cursor: pointer;
+}
+.servece input {
+    display: none;
+}
+.erros {
+    max-width: 1110px;
+    margin: 0 auto;
+    height: 40px;
+    background: #683939;
+    color: #ffffff;
+    margin-top: 5%;
+    padding: 1%;
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+.form-container {
+    margin-top: 5%;
+    background: #FFFFFF;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 10%;
+}
+.form-container form {
+    color: #FFFFFF;
+    font-weight: 300;
+    box-shadow: 10px 10px 10px rgba(12, 12, 12, 0.678);
+}
+.form-container label {
+    color: #121116
+}
+.form-container input {
+    width: 90%;
+    height: 30px;
+    border: 0.5px solid #b9b8b8;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 2%;
+}
+.form-container textarea {
+    width: 90%;
+    border: 0.5px solid #b9b8b8;
+    border-radius: 10px;
+    margin-top: 13px;
+    padding: 2%;
+}
+.valorTotal {
+    margin-right: 10%;
+}
+.valorTotal input {
+    width: 70px;
+}
+.radio input{
+    width: 3%;
+    height: 12px;
+    margin-bottom: 2%;
+}
+.back-project {
+    display: flex;
+    justify-content: space-between;
+}
+.back-project a {
+    margin-top: 5%;
+}
+.back-project button {
+    margin-right: 5%;
+}
+.not-faund {
+    color: #ffffff;
+    max-width: 1110px;
+    margin: 0 auto;
+    margin-top: 10%;
+    font-size: 30px;
+}
+#grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas: ". . ." ". . .";
+    max-width: 1110px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.grid-content {
+    background: #1c1c22;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgba(12, 12, 12, 0.678);
+    color: #ffffff;
+    width: auto;
+}
+.grid-infos {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 15%;
+    margin-bottom: 10%;
+}
+.buttons button:hover {
+    opacity: 0.5;
+}
+.button-margin {
+    margin-top: 5%;
+}
+.back-button {
+    background: black;
+}
+/* more */
+
+#more-container {
+    max-width: 1110px;
+    margin: 0 auto;
+    color: white;
+    margin-top: 3%;
+    background: #1c1c22;
+    height: auto;
+    border-radius: 15px;
+    padding: 5%;
+    box-shadow: 10px 10px 10px rgba(12, 12, 12, 0.335);
+    margin-bottom: 5%;
+}
+#more-container button:hover {
+    opacity: 0.5;
+}
+.infos-more {
+    max-width: 1110px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.infos-more1 {
+    display: flex;
+    justify-content: space-between;
+}
+.infos1 {
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+}
+.infos2 {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+}
+.more-detalhes {
+    margin-top: 10%;
+}
+.data-more {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+.descricao {
+    width: 50%;
+}
+.edit-more a button{
+    text-transform: uppercase;
+}
+.edit-more button {
+    width: 100px;
+    height: 30px;
+    background-color: #4d435d;
+    border: none;
+    border-radius: 7px;
+    color: #FFFFFF;
+    font-weight: 700;
+    cursor: pointer;
+}
+.delete-more a button{
+    text-transform: uppercase;
+}
+.delete-more button {
+    width: 100px;
+    height: 30px;
+    background-color: #752f2f;
+    border: none;
+    border-radius: 7px;
+    color: #FFFFFF;
+    font-weight: 700;
+    cursor: pointer;
+}
+.cliente {
+    margin-top: 10%;
+}
+.cliente a button{
+    text-transform: uppercase;
+}
+.cliente button{
+    margin-top: 2%;
+    width: 100px;
+    height: auto;
+    background-color: #6321ce;
+    border: none;
+    border-radius: 7px;
+    color: #FFFFFF;
+    font-weight: 700;
+    cursor: pointer;
+    
+}
+#more-clientes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    background: #1c1c22;
+    height: 250px;
+    border-radius: 15px;
+    padding: 5%;
+    box-shadow: 10px 10px 10px rgba(12, 12, 12, 0.335);
+} 
+#more-clientes p {
+    margin-bottom: 30%;
+}
+.margin-date {
+    margin-top: -70px;
+}
+.color-h3 {
+    color: #4d4d4d;
+}
+#notes {
+    margin-top: 5%;
+    width: 100%;
+    height: 150px;
+    padding: 3%;
+    box-shadow: 10px 10px 10px rgba(12, 12, 12, 0.335);
+    display: none;
+}
+#note p {
+    margin-bottom: 5%;
+}
+/* redirect */
+.redirect {
+    max-width: 1110px;
+    margin: 0 auto;
+    color: #c2c2c2;
+    margin-top: 5%;
+}
+.back {
+    background: #FFFFFF;
+    border: none;
+    width: 60px;
+    height: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    color: black;
+}
+.new {
+    background: #695190;
+    border: none;
+    width: 150px;
+    height: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    color: black;
+}
+@media screen and (max-width: 800px){
+    .menu  {
+        display: none;
+    }
+    .menu-moblie button{
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 700;
+        margin-top: 5%;
+    }
+    .menu-moblie button:hove {
+        opacity: 0.6;
+    }
+    .button-filter a button{
+        margin-left: 90%;
+    }
+    .button-filter1 a button {
+        margin-right: 40%;
+    }
+    .menu-moblie img{
+        display: block;
+        margin-left: 5%;
+    }
+    .menu1 {
+        display: flex;
+        
+    }
+    .menu1 img {
+        margin-top: 0.5%;
+    }
+    .menu1 p{
+        margin-left: 2%;
+        margin-top: 0.5%;
+        display: block;
+        color: white;
+        font-weight: 800;
+    }
+    .menu-moblie nav li {
+        display: block;
+    }
+    .infos-01 {
+        display: none;
+    }
+    .infos-02 {
+        margin-left: 90%;
+        cursor: pointer;
+    }
+    .status{
+        display: none;
+    }
+    .status1 {
+        margin-right: 5%;
+    }
+    .date1 {
+        margin-top: 50%;
+    }
+    
+}
+@media screen and (max-width: 700px){
+    .project {
+        margin-left: 5%;
+    }
+    #main-container {
+        width: 90%;
+    }
+    .infos-more {
+        font-size: 13px;
+    }
+    .infos {
+        display: block;
+        margin-bottom: 10%;
+        padding: 5%;
+    }
+    .infos-more {
+        display: block;
+    }
+    .infos1 {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+    }
+    .valor {
+        margin-right: 5%;
+    }
+    .infos2 {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin-top: 5%;
+    }
+    .infos h2 {
+        margin-left: 5%;
+    }
+    .infos-div {
+        margin: 0 auto;
+        margin-top: 5%;
+        margin-left: 10%;
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+    }
+    .infos h2 {
+        width: 90%;
+        text-align: center;
+    }
+    .buttons-infos {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+    #box {
+        width: 80%;
+    }
+    #box h2 {
+        font-size: 13px;
+    }
+    #box button {
+        width: 75%;
+    }
+    #more-container {
+        font-size: 13px;
+        width: 90%;
+    }
+    .infos-more1 h2{
+        font-size: 13px;
+    }
+    .more-detalhes {
+        font-size: 12px;
+        width: 100%;
+    }
+    #more-clientes {
+        font-size: 13px;
+    }
+    .detalhes1 {
+        display: block;
+    }
+    .detalhes2 {
+        display: block;
+    }
+    .cliente2 {
+        margin-left: 5%;
+    }
+    .cliente3 {
+        margin-left: 5%;
+    }
+    .radio1{
+        display: block;
+    }
+    #grid-container {
+        display: block;
+        width: 90%;
+        height: 2222px;
+    }
+    .grid-content {
+        height: 300px;
+    }
+    .grid-infos h1{
+        margin-top: 10%;
+    }
+    .servece-container {
+        display: block;
+    }
+}

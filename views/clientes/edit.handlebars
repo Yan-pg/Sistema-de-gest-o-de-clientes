@@ -1,0 +1,24 @@
+<!--{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+{{/each}}-->
+<section id="form">
+    <h3>Editar um cliente :)</h3>
+    <div class="form-container">
+        <div class="card-form">
+            <form action="/clientes/edit" method="POST">
+                    <input type="hidden" name="id" value="{{cliente._id}}">
+                    <input type="text" name="nome" placeholder="Digite o primerio nome do cliente." value="{{cliente.nome}}" required><br>
+                    <input type="text" name="sobrenome" placeholder="Digite o sobrenome nome do cliente." value="{{cliente.sobrenome}}" required><br>
+                    <input type="number" name="telefone" placeholder="Digite o numero de telefone." value="{{cliente.telefone}}" required><br>
+                    <input type="text" name="cidade" placeholder="Digite a cidade. (opcional)" value="{{cliente.cidade}}"><br>
+                    <input type="text" name="endereco" placeholder="Digite o endereço. (opcional)" value="{{cliente.endereco}}"><br>
+                    <input type="text" name="cpf" placeholder="Digite o cpf. (opcional)" value="{{cliente.cpf}}"><br>
+                    <div class="back-project">
+                            <a href="/clientes">Voltar</a>    
+                            <button class="button-margin" type="submit">Editar cliente</button>
+                        </div>
+            </form>
+        </div>
+    </div>
+</section>

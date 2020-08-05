@@ -1,0 +1,108 @@
+    
+<section id="filter">
+    <div class="project">
+        <p>Projeto: {{projeto.nome}}</p>
+        <div class="edit">
+            <a href="/projetos"><button>Voltar</button></a>
+        </div>
+    </div>
+</section>
+<main>
+    <div id="more-container">
+        <div class="infos-more">
+            <div class="infos1">
+                <h1>{{projeto.nome}}</h1>
+                <div class="valor">
+                    <h3>Valor Total</h3>
+                    <p>R$ {{projeto.valorTotal}},00</p>
+
+                </div>
+            </div>
+            <div class="infos2">
+                <div>
+                    <h3>Pago</h3>
+                    <p>{{projeto.pago}}</p>
+                </div>
+                <div>
+                    <h3>Status</h3>
+                    <p>{{projeto.status}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="more-detalhes">
+        <div class="detalhes">
+            <div class="detalhes1">
+                <div>
+                    <h3>Logomarca:</h3>
+                    <p>R${{projeto.logoMarca}},00</p><br>
+                </div>
+                <div>
+                    <h3>Mídias sociais:</h3>
+                    <p>R$ {{projeto.midiasSociais}},00</p><br>
+                </div>
+            </div>
+            <div class="detalhes2">
+                <div>
+                    <h3>Cartão de visita:</h3>
+                    <p>R$ {{projeto.cartaoDeVisita}},00</p><br>
+                </div>
+                <div>
+                    <h3>Panfletos:</h3>
+                    <p>R${{projeto.panfletos}},00</p><br>
+                </div>
+            </div>
+        </div>
+            <div class="data-more">
+                <div class="descricao">
+                    <h3>Descrição</h3>
+                    <p>{{projeto.descricao}}</p><br>
+                </div>
+                <div class="date">
+                    <p>{{projeto.data}}</p><br>
+                </div>
+            </div>
+        </div>
+        <div class="cliente">
+            <h3>Cliente</h3>
+            <p>{{projeto.cliente.nome}}</p>
+                <div id="more-clientes">
+                    <div class="clientes1">
+                        <h3>Sobrenome</h3>
+                        <p>{{projeto.cliente.sobrenome}}</p>
+                
+                        <h3>telefone</h3>
+                        <p>{{projeto.cliente.telefone}}</p>
+                    </div>
+                    <div class="cliente2">
+                        <h3>Cidade</h3>
+                        <p>{{projeto.cliente.cidade}}</p>
+                
+                        <h3>Endereço</h3>
+                        <p>{{projeto.cliente.endereco}}</p>
+                    </div>
+                    <div class="cliente3">
+                        <h3>cpf</h3>
+                        <p>{{projeto.cliente.cpf}}</p>
+                    </div>
+                </div>
+                <button class="button-fat" onclick="more()">Gera Recibo</button>
+        </div>
+        <div id="notes">
+            <p>
+                Nós da Big Design recebemos de {{projeto.cliente.nome}} {{projeto.cliente.sobrenome}} inscrito(a) no cpf: {{projeto.cliente.cpf}}, onde foram feitos os projetos de <strong>Logomarca: </strong>R$ {{projeto.logoMarca}},00, <strong>mídias sociais:</strong> R${{projeto.midiasSociais}},00, <strong> catão de visita:</strong>
+                {{projeto.midiasSociais}},00, <strong>Panfleto:</strong> R$ {{projeto.panfletos}},00, totalizando o valor de R$ {{projeto.valorTotal}},00 como pagamento dos serviços prestados.
+                A big Design agradece a sua escolha. Obrigado !
+            </p>
+        </div>
+    </div>
+</main>
+<script>
+  function more(){
+        var hideAndShow = document.getElementById("notes")
+        if (hideAndShow.style.display === "none") {
+            hideAndShow.style.display = "flex"
+        } else {
+            hideAndShow.style.display = "none"
+        }   
+  }
+</script>

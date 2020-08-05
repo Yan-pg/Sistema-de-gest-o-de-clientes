@@ -1,0 +1,63 @@
+    
+<section id="filter">
+    <div class="project">
+        <p>clientes</p>
+    </div>
+    <div class="status">
+        <div class="button-filter">
+                <a href="/clientes/criar"><button>+ novo Cliente</button></a>
+        </div>
+</section>
+<main>
+    <div id="grid-container">
+                {{#each clientes}}
+        <div class="grid-content">
+            <div class="grid-infos">
+                <h1><strong>{{nome}}</strong></h1><br>
+                <p><strong>telefone: </strong>{{telefone}}</p><br>
+                <p><strong>cidade: </strong>{{cidade}}</p><br>
+                <p><strong>endereco: </strong>{{endereco}}</p><br>
+                <p><strong>cpf: </strong>{{cpf}}</p><br>
+                <div class="buttons">
+                    <div class="more">
+                        <a href="/clientes/more/{{_id}}"><button>Mais</button></a>
+                    </div>
+                    <div class="edit">
+                    <a href="/clientes/edit/{{_id}}"><button>Editar</button></a>
+                    </div>
+                    <div class="delete">
+                            <button onclick="onOff()" >Deletar</button>
+                    </div>
+            </div>
+        </div>
+         <div id="box">
+            <h2>Tem certeza que deseja deletar esse projeto ?</h2>
+        <div>
+            <div class="container-delete">
+               <div class="inicial">
+                        <a href="">Voltar</a>
+                    </div>
+                    <form action="/clientes/delete" method="POST">
+                            <input type="hidden" name="id" value="{{_id}}">
+                        <button type="submit">Deletar</button>
+                    </form>  
+                    </div>  
+            </div>
+    </div>
+        {{else}}
+            <div class="not-faund">
+                Ainda não tem um cliente! :(
+            </div>
+        {{/each}}
+    </div>
+</main>
+<script>
+   function onOff() {
+        var hideAndShow = document.getElementById("box");
+        if (hideAndShow.style.display === "none") {
+            hideAndShow.style.display = "block";
+        } else {
+            hideAndShow.style.display = "none";
+        }
+  }
+</script>

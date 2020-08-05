@@ -1,0 +1,112 @@
+<div class="menu-moblie" id="menu">
+    <div class="menu1" onclick="showStatus()">
+        <p>Status</p>
+         <div class="button-filter">
+            <a href="/projetos/criar"><button>+ novo Projeto</button></a>
+        </div>
+    </div>
+    <div id="menu-nav">
+        <nav>
+            <a href="/projetos">
+                <li>Em andamento</li>
+            </a>
+            <a href="/projetos/entregues">
+                <li>Entregues</li>
+            </a>
+            <a href="/projetos/cancelados">
+                <li>Cancelados</li>
+            </a>
+        </nav>
+    </div>
+
+</div>
+<section id="filter">
+    <div class="project">
+        <p>Projetos</p>
+    </div>
+    <div class="status">
+        <div class="status-now">
+            <a href="/projetos"><button>Em andamento</button></a>
+        </div>
+        <div class="status-others">
+            <a href="/projetos/entregues"><button>Entrege</button></a>
+        </div>
+        <div class="status-others">
+            <a href="/projetos/cancelados"><button>Cancelado</button></a>
+        </div>
+        <div class="button-filter">
+            <a href="/projetos/criar"><button>+ novo Projeto</button></a>
+        </div>
+</section>
+<main>
+    {{#each projetos }}
+    <div id="main-container">
+        <div class="infos">
+            <h2>{{nome}}</h2>
+            <div class="infos-div">
+                <div>
+                    <h3>Cliente</h3>
+                    <p>{{cliente.nome}}</p>
+                </div>
+                <div>
+                    <h3>Valor Total</h3>
+                    <p>R$ {{valorTotal}},00</p>
+                </div>
+                <div>
+                    <h3>Status</h3>
+                    <p>{{status}}</p>
+                </div>
+            </div>
+            <div class="buttons-infos">
+                <div class="more">
+                    <a href="projetos/more/{{_id}}"><button>Mais</button></a>
+                </div>
+                <div class="edit">
+                    <a href="projetos/edit/{{_id}}"><button>Editar</button></a>
+                </div>
+                <div class="delete" onclick="onOff()">
+                    <button type="submit">Deletar</button>
+                </div>
+            </div>
+
+            </form>
+        </div>
+    </div>
+    <div id="box">
+        <h2>Tem certeza que deseja deletar esse projeto ?</h2>
+        <div>
+            <div class="container-delete">
+                <div class="inicial">
+                    <a href="">Voltar</a>
+                </div>
+                <form action="/projetos/delete" method="POST">
+                    <input type="hidden" name="id" value="{{_id}}">
+                    <button type="submit">Deletar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="not-faund">
+        Ainda não tem um projeto ! :(
+    </div>
+    {{/each}}
+</main>
+<script>
+    function onOff() {
+        var hideAndShow = document.getElementById("box");
+        if (hideAndShow.style.display === "none") {
+            hideAndShow.style.display = "block";
+        } else {
+            hideAndShow.style.display = "none";
+        }
+    }
+    function showStatus() {
+        var hideAndShow = document.getElementById("menu-nav");
+        if (hideAndShow.style.display === "none") {
+            hideAndShow.style.display = "block";
+        } else {
+            hideAndShow.style.display = "none";
+        }
+    }
+</script>
